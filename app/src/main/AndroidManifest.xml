@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ydbus.myapplication">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".APP"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.ydbus.myapplication.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/photo_path" />
+        </provider>
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ExcelActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.DEFAULT"></category>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.chaozh.iReaderFree.scheme.SHOW_DETAIL"></action>
+                <action android:name="com.chaozh.iReaderFree.scheme.READ_BOOK"></action>
+                <action android:name="com.chaozh.iReaderFree.scheme.DOWNLOAD_BOOK"></action>
+                <action android:name="com.chaozh.iReaderFree.scheme.OPEN_URL"></action>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.chaozh.iReaderFree.SHOW_DETAIL"></action>
+                <action android:name="com.chaozh.iReaderFree.READ_BOOK"></action>
+                <action android:name="com.chaozh.iReaderFree.DOWNLOAD_BOOK"></action>
+                <action android:name="com.chaozh.iReaderFree.OPEN_URL"></action>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.chaozh.iReaderFree.SHOW_DETAIL"></action>
+                <action android:name="com.chaozh.iReaderFree.READ_BOOK"></action>
+                <action android:name="com.chaozh.iReaderFree.DOWNLOAD_BOOK"></action>
+                <action android:name="com.chaozh.iReaderFree.OPEN_URL"></action>
+            </intent-filter>
+            <intent-filter>
+                <data android:scheme="androidzhangyueireader"></data>
+                <data android:scheme="zhangyueireader"></data>
+
+                <action android:name="android.intent.action.VIEW"></action>
+
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <category android:name="android.intent.category.BROWSABLE"></category>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"></action>
+
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <category android:name="android.intent.category.BROWSABLE"></category>
+
+                <data android:mimeType="text/*"></data>
+                <data android:mimeType="application/pdf"></data>
+                <data android:mimeType="application/epub+zip"></data>
+                <data android:mimeType="application/pdf"></data>
+                <data android:mimeType="application/x-expandedbook"></data>
+                <data android:mimeType="application/msword"></data>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.wordprocessingml.document"></data>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.wordprocessingml.template"></data>
+                <data android:mimeType="application/vnd.ms-powerpoint"></data>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.presentationml.presentation"></data>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.presentationml.slideshow"></data>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.presentationml.template"></data>
+                <data android:mimeType="application/vnd.ms-excel"></data>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"></data>
+                <data android:mimeType="application/vnd.openxmlformats-officedocument.spreadsheetml.template"></data>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"></action>
+
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <category android:name="android.intent.category.BROWSABLE"></category>
+
+                <data android:scheme="file"></data>
+                <data android:host="*"></data>
+                <data android:pathPattern=".*\.epub"></data>
+                <data android:pathPattern=".*\.ebk2"></data>
+                <data android:pathPattern=".*\.ebk3"></data>
+                <data android:pathPattern=".*\.chm"></data>
+                <data android:pathPattern=".*\.mobi"></data>
+                <data android:pathPattern=".*\.umd"></data>
+                <data android:pathPattern=".*\.log"></data>
+                <data android:pathPattern=".*\.trace"></data>
+                <data android:pathPattern=".*\.wps"></data>
+                <data android:pathPattern=".*\.dps"></data>
+                <data android:pathPattern=".*\.et"></data>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"></action>
+
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <category android:name="android.intent.category.BROWSABLE"></category>
+
+                <data android:scheme="file"></data>
+                <data android:host="*"></data>
+                <data android:mimeType="*/*"></data>
+                <data android:pathPattern=".*\.epub"></data>
+                <data android:pathPattern=".*\.ebk2"></data>
+                <data android:pathPattern=".*\.ebk3"></data>
+                <data android:pathPattern=".*\.chm"></data>
+                <data android:pathPattern=".*\.mobi"></data>
+                <data android:pathPattern=".*\.umd"></data>
+                <data android:pathPattern=".*\.log"></data>
+                <data android:pathPattern=".*\.trace"></data>
+                <data android:pathPattern=".*\.wps"></data>
+                <data android:pathPattern=".*\.dps"></data>
+                <data android:pathPattern=".*\.et"></data>
+            </intent-filter>
+
+        </activity>
+    </application>
+
+</manifest>
